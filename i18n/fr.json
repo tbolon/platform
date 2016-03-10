@@ -49,15 +49,15 @@
   },
   {
     "id": "api.admin.file_read_error",
-    "translation": "Erreur lors de la lecture du fichier Log"
+    "translation": "Erreur lors de la lecture du fichier journal"
   },
   {
     "id": "api.admin.init.debug",
-    "translation": "Initialisation routes API admin"
+    "translation": "Initialisation des routes API admin"
   },
   {
     "id": "api.admin.test_email.body",
-    "translation": "<br/><br/><br/>Il semble que votre Email Mattermost est correctement configuré !"
+    "translation": "<br/><br/><br/>Il semble que votre email Mattermost est correctement configuré !"
   },
   {
     "id": "api.admin.test_email.subject",
@@ -69,7 +69,7 @@
   },
   {
     "id": "api.api.init.parsing_templates.error",
-    "translation": "Echec de l'analyse des templates serveur %v"
+    "translation": "Échec de l'analyse des templates serveur %v"
   },
   {
     "id": "api.api.render.error",
@@ -101,11 +101,11 @@
   },
   {
     "id": "api.channel.add_user_to_channel.type.app_error",
-    "translation": "Vous ne pouvez pas ajouter un utilisateur à ce type de salon"
+    "translation": "Impossible d'ajouter un utilisateur à ce type de salon"
   },
   {
     "id": "api.channel.create_channel.direct_channel.app_error",
-    "translation": "Utilisez createDirectChannel via l'API pour la création de salon privé"
+    "translation": "Vous devez utiliser createDirectChannel via l'API pour la création d'un salon privé"
   },
   {
     "id": "api.channel.create_channel.invalid_character.app_error",
@@ -121,7 +121,7 @@
   },
   {
     "id": "api.channel.create_direct_channel.invalid_user.app_error",
-    "translation": "Id User invalide "
+    "translation": "Id d'utilisateur invalide "
   },
   {
     "id": "api.channel.delete_channel.archived",
@@ -145,11 +145,11 @@
   },
   {
     "id": "api.channel.delete_channel.incoming_webhook.error",
-    "translation": "Erreur rencontrée lors de la suppression des WebHook entrant, id=%v"
+    "translation": "Erreur rencontrée lors de la suppression des webhooks entrants, id=%v"
   },
   {
     "id": "api.channel.delete_channel.outgoing_webhook.error",
-    "translation": "Erreur rencontrée lors de la suppression des WebHook sortant, id=%v"
+    "translation": "Erreur rencontrée lors de la suppression des webhooks sortants, id=%v"
   },
   {
     "id": "api.channel.delete_channel.permissions.app_error",
@@ -165,7 +165,7 @@
   },
   {
     "id": "api.channel.get_channel_extra_info.member_limit.app_error",
-    "translation": "Echec de l'analyse de la limite de membre"
+    "translation": "Échec de l'analyse de la limite de membre"
   },
   {
     "id": "api.channel.get_channels.error",
@@ -173,7 +173,7 @@
   },
   {
     "id": "api.channel.init.debug",
-    "translation": "Initialisation routes API du salon"
+    "translation": "Initialisation des routes API du salon"
   },
   {
     "id": "api.channel.join_channel.permissions.app_error",
@@ -197,7 +197,7 @@
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.join_leave.error",
-    "translation": "Echec de l'envoi du message rejoint/quitte le salon %v"
+    "translation": "Échec de l'envoi du message rejoint/quitte le salon %v"
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.removed",
@@ -205,19 +205,19 @@
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.retrieve_user.error",
-    "translation": "Impossible de récupérer l'utilisateur tout en essayant de sauver la mise à jour du header du salon %v"
+    "translation": "Impossible de récupérer l'utilisateur lors de la sauvegarde de la mise à jour de l'entête du salon %v"
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.updated_from",
-    "translation": "%s a mis à jour le header du salon. Ancien header: %s Nouveau: %s"
+    "translation": "%s a mis à jour l'entête du salon. Ancien header: %s Nouveau: %s"
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.updated_to",
-    "translation": "%s a mis à jour le header du salon. Nouveau header: %s"
+    "translation": "%s a mis à jour l'entête du salon. Nouveau header: %s"
   },
   {
     "id": "api.channel.post_user_add_remove_message_and_forget.error",
-    "translation": "Echec de l'envoi du message rejoint/quitte le salon %v"
+    "translation": "Échec de l'envoi du message rejoint/quitte le salon %v"
   },
   {
     "id": "api.channel.remove_member.permissions.app_error",
@@ -249,7 +249,7 @@
   },
   {
     "id": "api.command.echo_command.create.error",
-    "translation": "Echec de la création du message /echo , err=%v"
+    "translation": "Échec de la création du message /echo , err=%v"
   },
   {
     "id": "api.command.echo_command.description",
@@ -265,7 +265,7 @@
   },
   {
     "id": "api.command.init.debug",
-    "translation": "Initialisation routes API command"
+    "translation": "Initialisation des routes API command"
   },
   {
     "id": "api.command.load_test_channels_command.channel.description",
@@ -289,15 +289,15 @@
   },
   {
     "id": "api.command.load_test_setup_command.create.error",
-    "translation": "Echec de la création de l'environement de test"
+    "translation": "Échec de la création de l'environement de test"
   },
   {
     "id": "api.command.load_test_setup_command.created.info",
-    "translation": "Equipe créée: %v"
+    "translation": "Équipe créée: %v"
   },
   {
     "id": "api.command.load_test_setup_command.description",
-    "translation": "Crée un environement de test pour l'équipe actuelle. [teams] [fuzz] <Num Channels> <Num Users> <NumPosts>"
+    "translation": "Créé un environnement de test pour l'équipe actuelle. [teams] [fuzz] <Num Channels> <Num Users> <NumPosts>"
   },
   {
     "id": "api.command.load_test_setup_command.login.info",
@@ -309,7 +309,7 @@
   },
   {
     "id": "api.command.load_test_url_command.description",
-    "translation": "Ajoute un message contenant le texte venant d'une URL données au salon actuel <Url>"
+    "translation": "Ajoute un message contenant le texte venant d'une URL donnée au salon actuel <Url>"
   },
   {
     "id": "api.command.load_test_url_command.file.app_error",
@@ -369,7 +369,7 @@
   },
   {
     "id": "api.context.invalid_team_url.debug",
-    "translation": "TeamURL consulté de façon invalide. Team URL ne doit pas être utilisée dans les fonctions de l'API ou dans les fonctions indépendantes aux équipes"
+    "translation": "TeamURL consultée de façon invalide. Team URL ne doit pas être utilisée dans les fonctions de l'API ou dans les fonctions indépendantes aux équipes"
   },
   {
     "id": "api.context.invalid_token.error",
@@ -437,7 +437,7 @@
   },
   {
     "id": "api.export.write_file.app_error",
-    "translation": "Impossible d'écrire dans le fichier d'export"
+    "translation": "Impossible d'écrire dans le fichier d'exportation"
   },
   {
     "id": "api.file.file_upload.exceeds",
@@ -489,7 +489,7 @@
   },
   {
     "id": "api.file.init.debug",
-    "translation": "Initialisation routes API file"
+    "translation": "Initialisation des routes API file"
   },
   {
     "id": "api.file.open_file_write_stream.configured.app_error",
@@ -565,7 +565,7 @@
   },
   {
     "id": "api.import.import_user.set_email.error",
-    "translation": "Echec lors de la validation de l'adresse email. err=%v"
+    "translation": "Échec lors de la validation de l'adresse email. err=%v"
   },
   {
     "id": "api.license.add_license.array.app_error",
@@ -597,7 +597,7 @@
   },
   {
     "id": "api.license.add_license.unique_users.app_error",
-    "translation": "Cette licence ne supporte que {{.Users}} utilisateurs alors que votre système a {{.Count}} utilisateurs uniques. Les utilisateurs uniques sont compté par adresse email distinctes. Vous pouvez consulter le nombre total d'utilisateurs depuis Rapports du site -> Voir les statistiques."
+    "translation": "Cette licence ne supporte que {{.Users}} utilisateurs alors que votre système a {{.Count}} utilisateurs uniques. Les utilisateurs uniques sont comptés par adresses emails distinctes. Vous pouvez consulter le nombre total d'utilisateurs depuis Rapports du site -> Voir les statistiques."
   },
   {
     "id": "api.license.init.debug",
@@ -669,7 +669,7 @@
   },
   {
     "id": "api.post.create_post.last_viewed.error",
-    "translation": "Une erreur a été rencontrée lors de l'update du dernier post vu, channel_id=%s, user_id=%s, err=%v"
+    "translation": "Une erreur a été rencontrée lors de la mise à jour du dernier post vu, channel_id=%s, user_id=%s, err=%v"
   },
   {
     "id": "api.post.create_post.parent_id.app_error",
@@ -705,11 +705,11 @@
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.create_post.error",
-    "translation": "Echec de la création du message de réponse, err=%v"
+    "translation": "Échec de la création du message de réponse, err=%v"
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.event_post.error",
-    "translation": "Echec de l'événement POST, err=%s"
+    "translation": "Échec de l'événement POST, err=%s"
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.getting.error",
@@ -769,15 +769,15 @@
   },
   {
     "id": "api.post.send_notifications_and_forget.push_notification.error",
-    "translation": "Echec de l'envoi d'une notification push id=%v, err=%v"
+    "translation": "Échec de l'envoi d'une notification push id=%v, err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.retrive_profiles.error",
-    "translation": "Echec lors de la récupération des profils utilisateurs team_id=%v, err=%v"
+    "translation": "Échec lors de la récupération des profils utilisateurs team_id=%v, err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.send.error",
-    "translation": "Echec lors de l'envoi d'email de mention email=%v err=%v"
+    "translation": "Échec lors de l'envoi d'email de mention email=%v err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.sent",
@@ -785,7 +785,7 @@
   },
   {
     "id": "api.post.send_notifications_and_forget.sessions.error",
-    "translation": "Echec lors de la récupération des sessions dans les notifications id=%v, err=%v"
+    "translation": "Échec lors de la récupération des sessions dans les notifications id=%v, err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.user_id.error",
@@ -793,7 +793,7 @@
   },
   {
     "id": "api.post.update_mention_count_and_forget.update_error",
-    "translation": "Echec lors de l'update du compteur de mention pour user_id=%v sur channel_id=%v err=%v"
+    "translation": "Échec lors de l'update du compteur de mention pour user_id=%v sur channel_id=%v err=%v"
   },
   {
     "id": "api.post.update_post.find.app_error",
@@ -869,11 +869,11 @@
   },
   {
     "id": "api.slackimport.slack_add_channels.import_failed",
-    "translation": "Echec lors de l'import: {{.DisplayName}}\r\n"
+    "translation": "Échec lors de l'importation: {{.DisplayName}}\r\n"
   },
   {
     "id": "api.slackimport.slack_add_channels.import_failed.debug",
-    "translation": "Echec lors de l'import: %s"
+    "translation": "Échec lors de l'importation: %s"
   },
   {
     "id": "api.slackimport.slack_add_channels.merge",
@@ -941,11 +941,11 @@
   },
   {
     "id": "api.team.create_team.email_disabled.app_error",
-    "translation": "L'inscription à une équipe via l'email est désactivée."
+    "translation": "L'inscription à une équipe via emails est désactivée."
   },
   {
     "id": "api.team.create_team_from_signup.email_disabled.app_error",
-    "translation": "L'inscription à une équipe via l'email est désactivée."
+    "translation": "L'inscription à une équipe via emails est désactivée."
   },
   {
     "id": "api.team.create_team_from_signup.expired_link.app_error",
@@ -1017,7 +1017,7 @@
   },
   {
     "id": "api.team.invite_members.send.error",
-    "translation": "Echec lors de l'envoi de email d'invitation err=%v"
+    "translation": "Échec lors de l'envoi de email d'invitation err=%v"
   },
   {
     "id": "api.team.invite_members.sending.info",
@@ -1029,7 +1029,7 @@
   },
   {
     "id": "api.team.is_team_creation_allowed.domain.app_error",
-    "translation": "L'email soit venir d'un domaine spécifique (e.g. @example.com). Merci de contacter votre administrateur système pour plus de détails."
+    "translation": "L'email doit venir d'un domaine spécifique (e.g. @example.com). Merci de contacter votre administrateur système pour plus de détails."
   },
   {
     "id": "api.team.permanent_delete_team.attempting.warn",
@@ -1037,11 +1037,11 @@
   },
   {
     "id": "api.team.permanent_delete_team.deleted.warn",
-    "translation": "Equipe définitivement supprimée %v id=%v"
+    "translation": "Équipe définitivement supprimée %v id=%v"
   },
   {
     "id": "api.team.signup_team.email_disabled.app_error",
-    "translation": "L'inscription à une équipe via l'email est désactivée."
+    "translation": "L'inscription à une équipe via emails est désactivée."
   },
   {
     "id": "api.team.update_team.permissions.app_error",
@@ -1065,7 +1065,7 @@
   },
   {
     "id": "api.templates.email_change_verify_body.info",
-    "translation": "Pour finir la mise à jour de votre adresse mail pour l'équipe {{.TeamDisplayName}}, merci de clicker sur le lien ci-dessous."
+    "translation": "Pour finir la mise à jour de votre adresse email pour l'équipe {{.TeamDisplayName}}, merci de clicker sur le lien ci-dessous."
   },
   {
     "id": "api.templates.email_change_verify_body.title",
@@ -1241,7 +1241,7 @@
   },
   {
     "id": "api.user.add_direct_channels_and_forget.failed.error",
-    "translation": "Echec lors de l'ajout des préférences de salon privé pour l'utilisateur user_id=%s, team_id=%s, err=%v"
+    "translation": "Échec lors de l'ajout des préférences de salon privé pour l'utilisateur user_id=%s, team_id=%s, err=%v"
   },
   {
     "id": "api.user.authorize_oauth_user.bad_response.app_error",
@@ -1253,11 +1253,11 @@
   },
   {
     "id": "api.user.authorize_oauth_user.invalid_state.app_error",
-    "translation": "Etat invalide"
+    "translation": "État invalide"
   },
   {
     "id": "api.user.authorize_oauth_user.invalid_state_team.app_error",
-    "translation": "Etat invalide; nom d'équipe manquant"
+    "translation": "État invalide; nom d'équipe manquant"
   },
   {
     "id": "api.user.authorize_oauth_user.missing.app_error",
@@ -1265,11 +1265,11 @@
   },
   {
     "id": "api.user.authorize_oauth_user.service.app_error",
-    "translation": "Echec de la requête Token à {{.Service}}"
+    "translation": "Échec de la requête Token à {{.Service}}"
   },
   {
     "id": "api.user.authorize_oauth_user.token_failed.app_error",
-    "translation": "Echec de la requête Token"
+    "translation": "Échec de la requête Token"
   },
   {
     "id": "api.user.authorize_oauth_user.unsupported.app_error",
@@ -1277,11 +1277,11 @@
   },
   {
     "id": "api.user.check_user_login_attempts.too_many.app_error",
-    "translation": "Votre compte a été verrouillé suite à un trop grand nombre de tentative de connexion. Merci de réinitialiser votre mot de passe."
+    "translation": "Votre compte a été verrouillé suite à un trop grand nombre de tentatives de connexion. Merci de réinitialiser votre mot de passe."
   },
   {
     "id": "api.user.check_user_password.invalid.app_error",
-    "translation": "Echec de la connexion : Mot de passe invalide"
+    "translation": "Échec de la connexion : Mot de passe invalide"
   },
   {
     "id": "api.user.complete_switch_with_oauth.blank_email.app_error",
@@ -1357,7 +1357,7 @@
   },
   {
     "id": "api.user.create_user.verified.error",
-    "translation": "Echec lors du passage de l'email au status vérifié err=%v"
+    "translation": "Échec lors du passage de l'email au status vérifié err=%v"
   },
   {
     "id": "api.user.get_authorization_code.unsupported.app_error",
@@ -1377,7 +1377,7 @@
   },
   {
     "id": "api.user.login.inactive.app_error",
-    "translation": "Echec de la connexion. Votre compte a été désactivé. Merci de contacter un administrateur."
+    "translation": "Échec de la connexion. Votre compte a été désactivé. Merci de contacter un administrateur."
   },
   {
     "id": "api.user.login.not_provided.app_error",
@@ -1385,7 +1385,7 @@
   },
   {
     "id": "api.user.login.not_verified.app_error",
-    "translation": "Echec de la connexion. L'email n'a pas été vérifié"
+    "translation": "Échec de la connexion. L'email n'a pas été vérifié"
   },
   {
     "id": "api.user.login.revoking.app_error",
@@ -1425,7 +1425,7 @@
   },
   {
     "id": "api.user.permanent_delete_user.deleted.warn",
-    "translation": "Compte définitivement supprimée %v id=%v"
+    "translation": "Compte définitivement supprimé %v id=%v"
   },
   {
     "id": "api.user.permanent_delete_user.system_admin.warn",
@@ -1453,15 +1453,15 @@
   },
   {
     "id": "api.user.send_email_change_email_and_forget.error",
-    "translation": "Echec lors de l'envoi du mail de notification de changement d'adresse email err=%v"
+    "translation": "Échec lors de l'envoi du mail de notification de changement d'adresse email err=%v"
   },
   {
     "id": "api.user.send_email_change_verify_email_and_forget.error",
-    "translation": "Echec lors de l'envoi du mail de vérification de changement d'adresse email err=%v"
+    "translation": "Échec lors de l'envoi du mail de vérification de changement d'adresse email err=%v"
   },
   {
     "id": "api.user.send_password_change_email_and_forget.error",
-    "translation": "Echec lors de l'envoi du mail de mise à jour du mot de passe err=%v"
+    "translation": "Échec lors de l'envoi du mail de mise à jour du mot de passe err=%v"
   },
   {
     "id": "api.user.send_password_reset.find.app_error",
@@ -1469,7 +1469,7 @@
   },
   {
     "id": "api.user.send_password_reset.send.app_error",
-    "translation": "Echec lors de l'envoi du mail de réinitialisation de mot de passe"
+    "translation": "Échec lors de l'envoi du mail de réinitialisation de mot de passe"
   },
   {
     "id": "api.user.send_password_reset.sso.app_error",
@@ -1477,19 +1477,19 @@
   },
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
-    "translation": "Echec lors de l'envoi du mail de mise à jour du mot de passe err=%v"
+    "translation": "Échec lors de l'envoi du email de mise à jour du mot de passe err=%v"
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
-    "translation": "Echec lors de l'envoi du mail de vérification d'adresse email err=%v"
+    "translation": "Échec lors de l'envoi du email de vérification d'adresse email err=%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
-    "translation": "Echec lors de l'envoi du mail de bienvenue err=%v"
+    "translation": "Échec lors de l'envoi du email de bienvenue err=%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
-    "translation": "Echec de la modification du mot de passe : context user_id ne correspond pas à l'ID de l'utilisateur fourni"
+    "translation": "Échec de la modification du mot de passe : context user_id ne correspond pas à l'ID de l'utilisateur fourni"
   },
   {
     "id": "api.user.update_active.permissions.app_error",
@@ -1497,11 +1497,11 @@
   },
   {
     "id": "api.user.update_password.context.app_error",
-    "translation": "Echec de la modification du mot de passe : context user_id ne correspond pas à props user_id"
+    "translation": "Échec de la modification du mot de passe : context user_id ne correspond pas à props user_id"
   },
   {
     "id": "api.user.update_password.failed.app_error",
-    "translation": "Echec de la modification du mot de passe"
+    "translation": "Échec de la modification du mot de passe"
   },
   {
     "id": "api.user.update_password.incorrect.app_error",
@@ -1513,11 +1513,11 @@
   },
   {
     "id": "api.user.update_password.oauth.app_error",
-    "translation": "Echec de la mise à jour du mot de passe : L'utilisateur est connecté via OAuth"
+    "translation": "Échec de la mise à jour du mot de passe : L'utilisateur est connecté via OAuth"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
-    "translation": "Echec de la mise à jour du mot de passe : Aucun compte valide"
+    "translation": "Échec de la mise à jour du mot de passe : Aucun compte valide"
   },
   {
     "id": "api.user.update_roles.one_admin.app_error",
@@ -1577,11 +1577,11 @@
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
-    "translation": "Echec lors de la mise à jour de LastActivityAt pour user_id=%v et session_id=%v, err=%v"
+    "translation": "Échec lors de la mise à jour de LastActivityAt pour user_id=%v et session_id=%v, err=%v"
   },
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
-    "translation": "Echec lors de la mise à jour de LastPingAt pour user_id=%v, err=%v"
+    "translation": "Échec lors de la mise à jour de LastPingAt pour user_id=%v, err=%v"
   },
   {
     "id": "api.web_hub.start.stopping.debug",
@@ -1593,7 +1593,7 @@
   },
   {
     "id": "api.web_socket.connect.upgrade.app_error",
-    "translation": "Echec lors de la mise à jour de la connexion websocket"
+    "translation": "Échec lors de la mise à jour de la connexion websocket"
   },
   {
     "id": "api.web_socket.init.debug",
@@ -1701,11 +1701,11 @@
   },
   {
     "id": "mattermost.security_bulletin.error",
-    "translation": "Echec de la récupération des détails du bulletin de sécurité"
+    "translation": "Échec de la récupération des détails du bulletin de sécurité"
   },
   {
     "id": "mattermost.security_bulletin_read.error",
-    "translation": "Echec de la lecture des détails du bulletin de sécurité"
+    "translation": "Échec de la lecture des détails du bulletin de sécurité"
   },
   {
     "id": "mattermost.security_checks.debug",
@@ -1713,7 +1713,7 @@
   },
   {
     "id": "mattermost.security_info.error",
-    "translation": "Echec de la récupération des informations des mises à jour de sécurité de Mattermost."
+    "translation": "Échec de la récupération des informations des mises à jour de sécurité de Mattermost."
   },
   {
     "id": "mattermost.send_bulletin.info",
@@ -1721,7 +1721,7 @@
   },
   {
     "id": "mattermost.system_admins.error",
-    "translation": "Echec de la récupération des administrateurs système pour les informations des mises à jour de sécurité de Mattermost."
+    "translation": "Échec de la récupération des administrateurs système pour les informations des mises à jour de sécurité de Mattermost."
   },
   {
     "id": "mattermost.working_dir",
@@ -1769,7 +1769,7 @@
   },
   {
     "id": "model.authorize.is_valid.state.app_error",
-    "translation": "Etat invalide"
+    "translation": "État invalide"
   },
   {
     "id": "model.authorize.is_valid.user_id.app_error",
@@ -1777,7 +1777,7 @@
   },
   {
     "id": "model.channel.is_valid.2_or_more.app_error",
-    "translation": "Le Nom doit contenir au moins deux caractères alphanumériques minuscules"
+    "translation": "Le nom doit contenir au moins deux caractères alphanumériques minuscules"
   },
   {
     "id": "model.channel.is_valid.create_at.app_error",
@@ -2297,19 +2297,19 @@
   },
   {
     "id": "store.sql.schema_out_of_date.warn",
-    "translation": "La version du schémas de la base de données %v semble être dépassé"
+    "translation": "La version du schéma de la base de données %v semble être dépassé"
   },
   {
     "id": "store.sql.schema_set.info",
-    "translation": "Le schémas de la base de données est passé à la version %v"
+    "translation": "Le schéma de la base de données est passé à la version %v"
   },
   {
     "id": "store.sql.schema_upgrade_attempt.warn",
-    "translation": "Tentative de mise a jour du schémas de la base de données à la version %v"
+    "translation": "Tentative de mise a jour du schéma de la base de données à la version %v"
   },
   {
     "id": "store.sql.schema_version.critical",
-    "translation": "La version du schémas de la base de données %v ne peut pas être mis à jour. Vous ne devez pas sauter une version antérieure."
+    "translation": "La version du schéma de la base de données %v ne peut pas être mis à jour. Vous ne devez pas sauter une version antérieure."
   },
   {
     "id": "store.sql.short_ciphertext",
@@ -2461,7 +2461,7 @@
   },
   {
     "id": "store.sql_channel.save_channel.limit.app_error",
-    "translation": "Vous avez atteint le nombre maximal de salons autorisé."
+    "translation": "Vous avez atteint le nombre maximal de salons autorisés."
   },
   {
     "id": "store.sql_channel.save_channel.previously.app_error",
@@ -2537,11 +2537,11 @@
   },
   {
     "id": "store.sql_oauth.get_app.find.app_error",
-    "translation": "L'app n'a pas été trouvée"
+    "translation": "L'application n'a pas été trouvée"
   },
   {
     "id": "store.sql_oauth.get_app.finding.app_error",
-    "translation": "Erreur lors de la recherche de l'app"
+    "translation": "Erreur lors de la recherche de l'application"
   },
   {
     "id": "store.sql_oauth.get_app_by_user.find.app_error",
@@ -2601,11 +2601,11 @@
   },
   {
     "id": "store.sql_post.analytics_posts_count.app_error",
-    "translation": "Impossible d'obtenir le nombre d'envoi"
+    "translation": "Impossible d'obtenir le nombre d'envois"
   },
   {
     "id": "store.sql_post.analytics_posts_count_by_day.app_error",
-    "translation": "Impossible d'obtenir le nombre d'envoi par jour"
+    "translation": "Impossible d'obtenir le nombre d'envois par jour"
   },
   {
     "id": "store.sql_post.analytics_user_counts_posts_by_day.app_error",
@@ -2749,7 +2749,7 @@
   },
   {
     "id": "store.sql_session.get_sessions.error",
-    "translation": "Echec lors du nettoyage des sessions dans getSessions err=%v"
+    "translation": "Échec lors du nettoyage des sessions dans getSessions err=%v"
   },
   {
     "id": "store.sql_session.permanent_delete_sessions_by_user.app_error",
@@ -2925,7 +2925,7 @@
   },
   {
     "id": "store.sql_user.save.max_accounts.app_error",
-    "translation": "Cete équipe a atteint le nombre maximal d'utilisateur. Contactez votre administrateur système pour définir une limite plus élevée."
+    "translation": "Cete équipe a atteint le nombre maximal d'utilisateurs. Contactez votre administrateur système pour définir une limite plus élevée."
   },
   {
     "id": "store.sql_user.save.member_count.app_error",
@@ -3073,7 +3073,7 @@
   },
   {
     "id": "utils.i18n.loaded",
-    "translation": "Chargement des traduction du système pour '%v' depuis '%v'"
+    "translation": "Chargement des traductions du système pour '%v' depuis '%v'"
   },
   {
     "id": "utils.iru.with_evict",
@@ -3109,35 +3109,35 @@
   },
   {
     "id": "utils.mail.connect_smtp.open.app_error",
-    "translation": "Echec lors de l'ouverture de la connexion"
+    "translation": "Échec lors de l'ouverture de la connexion"
   },
   {
     "id": "utils.mail.connect_smtp.open_tls.app_error",
-    "translation": "Echec lors de l'ouverture de la connexion TLS"
+    "translation": "Échec lors de l'ouverture de la connexion TLS"
   },
   {
     "id": "utils.mail.new_client.auth.app_error",
-    "translation": "Echec lors de l'authentification sur le serveur SMTP"
+    "translation": "Échec lors de l'authentification sur le serveur SMTP"
   },
   {
     "id": "utils.mail.new_client.open.error",
-    "translation": "Echec lors de l'ouverture de la connexion au serveur SMTP %v"
+    "translation": "Échec lors de l'ouverture de la connexion au serveur SMTP %v"
   },
   {
     "id": "utils.mail.send_mail.close.app_error",
-    "translation": "Echec lors de la fermeture de la connexion au serveur SMTP"
+    "translation": "Échec lors de la fermeture de la connexion au serveur SMTP"
   },
   {
     "id": "utils.mail.send_mail.from_address.app_error",
-    "translation": "Echec lors de l'ajout depuis une adresse email"
+    "translation": "Échec lors de l'ajout depuis une adresse email"
   },
   {
     "id": "utils.mail.send_mail.msg.app_error",
-    "translation": "Echec lors de l'écriture du mail"
+    "translation": "Échec lors de l'écriture du mail"
   },
   {
     "id": "utils.mail.send_mail.msg_data.app_error",
-    "translation": "Echec lors de l'ajout des données du mail"
+    "translation": "Échec lors de l'ajout des données du mail"
   },
   {
     "id": "utils.mail.send_mail.sending.debug",
@@ -3145,7 +3145,7 @@
   },
   {
     "id": "utils.mail.send_mail.to_address.app_error",
-    "translation": "Echec lors de l'ajout de l'adresse email"
+    "translation": "Échec lors de l'ajout de l'adresse email"
   },
   {
     "id": "utils.mail.test.configured.error",
@@ -3189,7 +3189,7 @@
   },
   {
     "id": "web.dir_fail.error",
-    "translation": "Echec de l'observation du répertoire %v"
+    "translation": "Échec de l'observation du répertoire %v"
   },
   {
     "id": "web.do_load_channel.error",
@@ -3313,7 +3313,7 @@
   },
   {
     "id": "web.parsing_templates.error",
-    "translation": "Echec de l'analyse des templates %v"
+    "translation": "Échec de l'analyse des templates %v"
   },
   {
     "id": "web.post_permalink.app_error",
