@@ -57,7 +57,7 @@
   },
   {
     "id": "api.admin.test_email.body",
-    "translation": "<br/><br/><br/>Il semble que votre Email Mattermost est correctement configuré !"
+    "translation": "<br/><br/><br/>Il semble que votre email Mattermost est correctement configuré !"
   },
   {
     "id": "api.admin.test_email.subject",
@@ -244,120 +244,140 @@
     "translation": "Tentative de mise à jour non valide du salon par défaut {{.Channel}}"
   },
   {
-    "id": "api.command.check_command.start.app_error",
-    "translation": "Les commandes doivent commencer par /"
+    "id": "api.command.admin_only.app_error",
+    "translation": "Les intégrations sont uniquement autorisées aux administrateurs."
   },
   {
-    "id": "api.command.echo_command.create.error",
-    "translation": "Echec de la création du message /echo , err=%v"
+    "id": "api.command.delete.app_error",
+    "translation": "Autorisations insuffisantes pour la commande delete"
   },
   {
-    "id": "api.command.echo_command.description",
-    "translation": "Envoie un message différé à partir de votre compte, /echo \"message\" [délai en secondes]"
+    "id": "api.command.disabled.app_error",
+    "translation": "Les commandes ont été désactivées par l'administrateur système."
   },
   {
-    "id": "api.command.echo_command.high_volume.app_error",
-    "translation": "Trop de requêtes echo en cours, impossible de traiter la demande"
+    "id": "api.command.execute_command.debug",
+    "translation": "Exécute cmd=%v userId=%v"
   },
   {
-    "id": "api.command.echo_command.under.app_error",
-    "translation": "Le délai doit être inférieur à 10000 secondes"
+    "id": "api.command.execute_command.failed.app_error",
+    "translation": "La commande avec le déclencheur '{{.Trigger}}' a échoué"
+  },
+  {
+    "id": "api.command.execute_command.failed_empty.app_error",
+    "translation": "La commande avec le déclencheur '{{.Trigger}}' a renvoyé une réponse vide"
+  },
+  {
+    "id": "api.command.execute_command.failed_resp.app_error",
+    "translation": "La commande avec le déclencheur '{{.Trigger}}' a renvoyé la réponse {{.Status}}"
+  },
+  {
+    "id": "api.command.execute_command.not_found.app_error",
+    "translation": "La commande avec le déclencheur '{{.Trigger}}' n'a pas pu être trouvée"
+  },
+  {
+    "id": "api.command.execute_command.save.app_error",
+    "translation": "Une erreur est survenue durant l'enregistrement de la réponse de la commande vers le canal"
+  },
+  {
+    "id": "api.command.execute_command.start.app_error",
+    "translation": "Aucun déclencheur trouvé pour la commande"
   },
   {
     "id": "api.command.init.debug",
-    "translation": "Initialisation routes API command"
+    "translation": "Initialisation des routes pour l'api command"
   },
   {
-    "id": "api.command.load_test_channels_command.channel.description",
-    "translation": "Ajoute un nombre spécifique de salons aléatoires à l'équipe actuelle <MinChannels> <MaxChannels>"
+    "id": "api.command.regen.app_error",
+    "translation": "Autorisations insuffisantes pour regénérer le jeton de la commande"
   },
   {
-    "id": "api.command.load_test_channels_command.fuzz.description",
-    "translation": "Ajoute un nombre spécifique de salons aléatoires contenant des messages de test à l'équipe actuelle  <Min Channels> <Max Channels>"
+    "id": "api.command_echo.create.app_error",
+    "translation": "Impossible de créer le message /echo, err=%v"
   },
   {
-    "id": "api.command.load_test_command.description",
-    "translation": "Debug test de charge"
+    "id": "api.command_echo.delay.app_error",
+    "translation": "Les délais doivent être inférieurs à 10000 secondes"
   },
   {
-    "id": "api.command.load_test_posts_command.fuzz.description",
-    "translation": "Ajoute des posts génerés aléatoirement et contenant des messages de test au salon actuel <Min Posts> <Max Posts> <Min Images> <Max Images>"
+    "id": "api.command_echo.desc",
+    "translation": "Renvoie le texte depuis votre compte"
   },
   {
-    "id": "api.command.load_test_posts_command.posts.description",
-    "translation": "Ajoute des posts génerés aléatoirement au salon actuel <Min Posts> <Max Posts> <Min Images> <Max Images>"
+    "id": "api.command_echo.high_volume.app_error",
+    "translation": "Volume trop important de requêtes echo, impossible de traiter la demande"
   },
   {
-    "id": "api.command.load_test_setup_command.create.error",
-    "translation": "Echec de la création de l'environement de test"
+    "id": "api.command_echo.hint",
+    "translation": "'message' [délai en secondes]"
   },
   {
-    "id": "api.command.load_test_setup_command.created.info",
-    "translation": "Equipe créée: %v"
+    "id": "api.command_echo.name",
+    "translation": "echo"
   },
   {
-    "id": "api.command.load_test_setup_command.description",
-    "translation": "Crée un environement de test pour l'équipe actuelle. [teams] [fuzz] <Num Channels> <Num Users> <NumPosts>"
+    "id": "api.command_join.desc",
+    "translation": "Rejoint le canal ouvert"
   },
   {
-    "id": "api.command.load_test_setup_command.login.info",
-    "translation": "\t Utilisateur à logger: %v, %v"
+    "id": "api.command_join.fail.app_error",
+    "translation": "Une erreur est survenue durant l'ouverture du canal."
   },
   {
-    "id": "api.command.load_test_url_command.create.error",
-    "translation": "Impossible de créer le message, err=%v"
+    "id": "api.command_join.hint",
+    "translation": "[nom-canal]"
   },
   {
-    "id": "api.command.load_test_url_command.description",
-    "translation": "Ajoute un message contenant le texte venant d'une URL données au salon actuel <Url>"
+    "id": "api.command_join.list.app_error",
+    "translation": "Une erreur est survenue durant l'énumération des canaux."
   },
   {
-    "id": "api.command.load_test_url_command.file.app_error",
-    "translation": "Impossible d'obtenir le fichier"
+    "id": "api.command_join.missing.app_error",
+    "translation": "Nous n'avons pas pu trouver le canal"
   },
   {
-    "id": "api.command.load_test_url_command.reading.app_error",
-    "translation": "Erreur lors de la lecture du fichier"
+    "id": "api.command_join.name",
+    "translation": "join"
   },
   {
-    "id": "api.command.load_test_url_command.url.app_error",
-    "translation": "La commande doit contenir une URL"
+    "id": "api.command_join.success",
+    "translation": "Canal rejoint."
   },
   {
-    "id": "api.command.load_test_users_command.fuzz.description",
-    "translation": "Ajoute un nombre spécifique d'utilisateurs générés aléatoirement avec des valeurs de test à l'équipe actuelle <Min Users> <Max Users>"
+    "id": "api.command_logout.desc",
+    "translation": "Déconnection de Mattermost"
   },
   {
-    "id": "api.command.load_test_users_command.users.description",
-    "translation": "Ajoute un nombre spécifique d'utilisateurs générés aléatoirement à l'équipe actuelle <Min Users> <Max Users>"
+    "id": "api.command_logout.name",
+    "translation": "logout"
   },
   {
-    "id": "api.command.logout_command.description",
-    "translation": "Déconnexion"
+    "id": "api.command_logout.success_message",
+    "translation": "Déconnexion..."
   },
   {
-    "id": "api.command.me_command.create.error",
-    "translation": "Impossible de créer le message /me , err=%v"
+    "id": "api.command_me.desc",
+    "translation": "Effectuer une action"
   },
   {
-    "id": "api.command.me_command.description",
-    "translation": "Faire une action, /me [message]"
+    "id": "api.command_me.hint",
+    "translation": "[message]"
   },
   {
-    "id": "api.command.no_implemented.app_error",
-    "translation": "Commande non implémentée"
+    "id": "api.command_me.name",
+    "translation": "me"
   },
   {
-    "id": "api.command.shrug_command.create.error",
-    "translation": "Impossible de créer le message /shrug , err=%v"
+    "id": "api.command_shrug.desc",
+    "translation": "Ajoute ¯\\_(ツ)_/¯ à votre message"
   },
   {
-    "id": "api.command.shrug_command.description",
-    "translation": "Ajoute ¯\\_(ツ)_/¯ à votre message, /shrug [message]"
+    "id": "api.command_shrug.hint",
+    "translation": "[message]"
   },
   {
-    "id": "api.commmand.join_command.description",
-    "translation": "Rejoindre le salon ouvert"
+    "id": "api.command_shrug.name",
+    "translation": "shrug"
   },
   {
     "id": "api.context.404.app_error",
