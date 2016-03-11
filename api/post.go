@@ -604,12 +604,12 @@ func sendNotifications(c *Context, post *model.Post, team *model.Team, channel *
 			year := fmt.Sprintf("%d", tm.Year())
 			zone, _ := tm.Zone()
 
-			subjectPage := NewServerTemplatePage("post_subject", c.Locale)
+			subjectPage := NewServerTemplatePage("post_subject", profileMap[id].Locale)
 			subjectPage.Props["Subject"] = userLocale("api.templates.post_subject",
 				map[string]interface{}{"SubjectText": subjectText, "TeamDisplayName": team.DisplayName,
 					"Month": month[:3], "Day": day, "Year": year})
 
-			bodyPage := NewServerTemplatePage("post_body", c.Locale)
+			bodyPage := NewServerTemplatePage("post_body", profileMap[id].Locale)
 			bodyPage.Props["SiteURL"] = c.GetSiteURL()
 			bodyPage.Props["PostMessage"] = model.ClearMentionTags(post.Message)
 			bodyPage.Props["TeamLink"] = teamURL + "/channels/" + channel.Name
@@ -1094,11 +1094,29 @@ func deletePost(c *Context, w http.ResponseWriter, r *http.Request) {
 		message.Add("post", post.ToJson())
 
 		PublishAndForget(message)
+		DeletePostFilesAndForget(c.Session.TeamId, post)
 
 		result := make(map[string]string)
 		result["id"] = postId
 		w.Write([]byte(model.MapToJson(result)))
 	}
+}
+
+func DeletePostFilesAndForget(teamId string, post *model.Post) {
+	go func() {
+		if len(post.Filenames) == 0 {
+			return
+		}
+
+		prefix := "teams/" + teamId + "/channels/" + post.ChannelId + "/users/" + post.UserId + "/"
+		for _, filename := range post.Filenames {
+			splitUrl := strings.Split(filename, "/")
+			oldPath := prefix + splitUrl[len(splitUrl)-2] + "/" + splitUrl[len(splitUrl)-1]
+			newPath := prefix + splitUrl[len(splitUrl)-2] + "/deleted_" + splitUrl[len(splitUrl)-1]
+			moveFile(oldPath, newPath)
+		}
+
+	}()
 }
 
 func getPostsBefore(c *Context, w http.ResponseWriter, r *http.Request) {

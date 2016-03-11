@@ -36,9 +36,10 @@ export default class SearchResultsItem extends React.Component {
     }
 
     render() {
-        var channelName = null;
+        let channelName = null;
         const channel = this.props.channel;
-        var timestamp = UserStore.getCurrentUser().update_at;
+        const timestamp = UserStore.getCurrentUser().update_at;
+        const user = this.props.user || {};
 
         if (channel) {
             channelName = channel.display_name;
@@ -60,7 +61,7 @@ export default class SearchResultsItem extends React.Component {
         return (
             <div className='search-item__container'>
                 <div className='date-separator'>
-                    <hr className='separator__hr' />
+                    <hr className='separator__hr'/>
                     <div className='separator__text'>
                         <FormattedDate
                             value={this.props.post.create_at}
@@ -84,7 +85,7 @@ export default class SearchResultsItem extends React.Component {
                         </div>
                         <div>
                             <ul className='post__header'>
-                                <li className='col__name'><strong><UserProfile userId={this.props.post.user_id} /></strong></li>
+                                <li className='col__name'><strong><UserProfile user={user}/></strong></li>
                                 <li className='col'>
                                     <time className='search-item-time'>
                                         <FormattedDate
@@ -122,6 +123,7 @@ export default class SearchResultsItem extends React.Component {
                             </ul>
                             <div className='search-item-snippet'>
                                 <span
+                                    onClick={TextFormatting.handleClick}
                                     dangerouslySetInnerHTML={{__html: TextFormatting.formatText(this.props.post.message, formattingOptions)}}
                                 />
                             </div>
@@ -135,6 +137,7 @@ export default class SearchResultsItem extends React.Component {
 
 SearchResultsItem.propTypes = {
     post: React.PropTypes.object,
+    user: React.PropTypes.object,
     channel: React.PropTypes.object,
     isMentionSearch: React.PropTypes.bool,
     term: React.PropTypes.string

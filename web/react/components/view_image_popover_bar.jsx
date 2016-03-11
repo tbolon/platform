@@ -4,9 +4,6 @@
 import {FormattedMessage} from 'mm-intl';
 
 export default class ViewImagePopoverBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         var publicLink = '';
         if (global.window.mm_config.EnablePublicLink === 'true') {
@@ -54,6 +51,7 @@ export default class ViewImagePopoverBar extends React.Component {
                         href={this.props.fileURL}
                         download={this.props.filename}
                         className='text'
+                        target='_blank'
                     >
                         <FormattedMessage
                             id='view_image_popover.download'

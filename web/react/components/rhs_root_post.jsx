@@ -5,7 +5,7 @@ import ChannelStore from '../stores/channel_store.jsx';
 import UserProfile from './user_profile.jsx';
 import UserStore from '../stores/user_store.jsx';
 import * as TextFormatting from '../utils/text_formatting.jsx';
-import * as utils from '../utils/utils.jsx';
+import * as Utils from '../utils/utils.jsx';
 import * as Emoji from '../utils/emoticons.jsx';
 import FileAttachmentList from './file_attachment_list.jsx';
 import twemoji from 'twemoji';
@@ -40,7 +40,7 @@ export default class RhsRootPost extends React.Component {
         this.parseEmojis();
     }
     shouldComponentUpdate(nextProps) {
-        if (!utils.areObjectsEqual(nextProps.post, this.props.post)) {
+        if (!Utils.areObjectsEqual(nextProps.post, this.props.post)) {
             return true;
         }
 
@@ -50,10 +50,10 @@ export default class RhsRootPost extends React.Component {
         this.parseEmojis();
     }
     render() {
-        var post = this.props.post;
-        var currentUser = UserStore.getCurrentUser();
-        var isOwner = currentUser.id === post.user_id;
-        var isAdmin = utils.isAdmin(currentUser.roles);
+        const post = this.props.post;
+        const user = this.props.user;
+        var isOwner = user.id === post.user_id;
+        var isAdmin = Utils.isAdmin(user.roles);
         var timestamp = UserStore.getProfile(post.user_id).update_at;
         var channel = ChannelStore.get(post.channel_id);
 
@@ -62,13 +62,13 @@ export default class RhsRootPost extends React.Component {
             type = 'Comment';
         }
 
-        var currentUserCss = '';
+        var userCss = '';
         if (UserStore.getCurrentId() === post.user_id) {
-            currentUserCss = 'current--user';
+            userCss = 'current--user';
         }
 
         var systemMessageClass = '';
-        if (utils.isSystemMessage(post)) {
+        if (Utils.isSystemMessage(post)) {
             systemMessageClass = 'post--system';
         }
 
@@ -88,22 +88,24 @@ export default class RhsRootPost extends React.Component {
 
         var dropdownContents = [];
 
-        dropdownContents.push(
-            <li
-                key='rhs-root-permalink'
-                role='presentation'
-            >
-                <a
-                    href='#'
-                    onClick={this.handlePermalink}
+        if (!Utils.isMobile()) {
+            dropdownContents.push(
+                <li
+                    key='rhs-root-permalink'
+                    role='presentation'
                 >
-                    <FormattedMessage
-                        id='rhs_root.permalink'
-                        defaultMessage='Permalink'
-                    />
-                </a>
-            </li>
-        );
+                    <a
+                        href='#'
+                        onClick={this.handlePermalink}
+                    >
+                        <FormattedMessage
+                            id='rhs_root.permalink'
+                            defaultMessage='Permalink'
+                        />
+                    </a>
+                </li>
+            );
+        }
 
         if (isOwner) {
             dropdownContents.push(
@@ -183,14 +185,14 @@ export default class RhsRootPost extends React.Component {
             );
         }
 
-        let userProfile = <UserProfile userId={post.user_id} />;
+        let userProfile = <UserProfile user={user}/>;
         let botIndicator;
 
         if (post.props && post.props.from_webhook) {
             if (post.props.override_username && global.window.mm_config.EnablePostUsernameOverride === 'true') {
                 userProfile = (
                     <UserProfile
-                        userId={post.user_id}
+                        user={user}
                         overwriteName={post.props.override_username}
                         disablePopover={true}
                     />
@@ -198,10 +200,10 @@ export default class RhsRootPost extends React.Component {
             }
 
             botIndicator = <li className='col col__name bot-indicator'>{'BOT'}</li>;
-        } else if (utils.isSystemMessage(post)) {
+        } else if (Utils.isSystemMessage(post)) {
             userProfile = (
                 <UserProfile
-                    userId={''}
+                    user={{}}
                     overwriteName={Constants.SYSTEM_MESSAGE_PROFILE_NAME}
                     overwriteImage={Constants.SYSTEM_MESSAGE_PROFILE_IMAGE}
                     disablePopover={true}
@@ -209,12 +211,12 @@ export default class RhsRootPost extends React.Component {
             );
         }
 
-        let src = '/api/v1/users/' + post.user_id + '/image?time=' + timestamp + '&' + utils.getSessionIndex();
+        let src = '/api/v1/users/' + post.user_id + '/image?time=' + timestamp + '&' + Utils.getSessionIndex();
         if (post.props && post.props.from_webhook && global.window.mm_config.EnablePostIconOverride === 'true') {
             if (post.props.override_icon_url) {
                 src = post.props.override_icon_url;
             }
-        } else if (utils.isSystemMessage(post)) {
+        } else if (Utils.isSystemMessage(post)) {
             src = Constants.SYSTEM_MESSAGE_PROFILE_IMAGE;
         }
 
@@ -228,7 +230,7 @@ export default class RhsRootPost extends React.Component {
         );
 
         return (
-            <div className={'post post--root ' + currentUserCss + ' ' + systemMessageClass}>
+            <div className={'post post--root ' + userCss + ' ' + systemMessageClass}>
                 <div className='post-right-channel__name'>{channelName}</div>
                 <div className='post__content'>
                     <div className='post__img'>
@@ -276,10 +278,10 @@ export default class RhsRootPost extends React.Component {
 }
 
 RhsRootPost.defaultProps = {
-    post: null,
     commentCount: 0
 };
 RhsRootPost.propTypes = {
-    post: React.PropTypes.object,
+    post: React.PropTypes.object.isRequired,
+    user: React.PropTypes.object.isRequired,
     commentCount: React.PropTypes.number
 };

@@ -210,7 +210,7 @@ class SuggestionStore extends EventEmitter {
     }
 
     handleEventPayload(payload) {
-        const {type, id, ...other} = payload.action; // eslint-disable-line no-redeclare
+        const {type, id, ...other} = payload.action; // eslint-disable-line no-use-before-define
 
         switch (type) {
         case ActionTypes.SUGGESTION_PRETEXT_CHANGED:
@@ -258,4 +258,9 @@ class SuggestionStore extends EventEmitter {
     }
 }
 
-export default new SuggestionStore();
+const instance = new SuggestionStore();
+export default instance;
+
+if (window.mm_config.EnableDeveloper === 'true') {
+    window.SuggestionStore = instance;
+}

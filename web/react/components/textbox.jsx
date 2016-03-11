@@ -59,9 +59,9 @@ export default class Textbox extends React.Component {
     }
 
     onRecievedError() {
-        const errorState = ErrorStore.getLastError();
+        const errorCount = ErrorStore.getConnectionErrorCount();
 
-        if (errorState && errorState.connErrorCount > 0) {
+        if (errorCount > 0) {
             this.setState({connection: 'bad-connection'});
         } else {
             this.setState({connection: ''});
@@ -129,12 +129,12 @@ export default class Textbox extends React.Component {
     }
 
     render() {
+        const hasText = this.props.messageText.length > 0;
+
         let previewLink = null;
         if (Utils.isFeatureEnabled(PreReleaseFeatures.MARKDOWN_PREVIEW)) {
-            const previewLinkVisible = this.props.messageText.length > 0;
             previewLink = (
                 <a
-                    style={{visibility: previewLinkVisible ? 'visible' : 'hidden'}}
                     onClick={this.showPreview}
                     className='textbox-preview-link'
                 >
@@ -152,6 +152,50 @@ export default class Textbox extends React.Component {
                 </a>
             );
         }
+
+        let helpText = (
+            <div
+                style={{visibility: hasText ? 'visible' : 'hidden', opacity: hasText ? '0.5' : '0'}}
+                className='help_format_text'
+            >
+                <b>
+                    <FormattedMessage
+                        id='textbox.bold'
+                        defaultMessage='**bold**'
+                    />
+                </b>
+                <i>
+                    <FormattedMessage
+                        id='textbox.italic'
+                        defaultMessage='_italic_'
+                    />
+                </i>
+                <span>~~<strike>
+                    <FormattedMessage
+                        id='textbox.strike'
+                        defaultMessage='strike'
+                    />
+                </strike>~~ </span>
+                <code>
+                    <FormattedMessage
+                        id='textbox.inlinecode'
+                        defaultMessage='`inline code`'
+                    />
+                </code>
+                <code>
+                    <FormattedMessage
+                        id='textbox.preformatted'
+                        defaultMessage='```preformatted```'
+                    />
+                </code>
+                <span>
+                    <FormattedMessage
+                        id='textbox.quote'
+                        defaultMessage='>quote'
+                    />
+                </span>
+            </div>
+        );
 
         return (
             <div
@@ -184,17 +228,20 @@ export default class Textbox extends React.Component {
                     dangerouslySetInnerHTML={{__html: this.state.preview ? TextFormatting.formatText(this.props.messageText) : ''}}
                 >
                 </div>
-                {previewLink}
-                <a
-                    target='_blank'
-                    href='http://docs.mattermost.com/help/getting-started/messaging-basics.html'
-                    className='textbox-help-link'
-                >
-                    <FormattedMessage
-                        id='textbox.help'
-                        defaultMessage='Help'
-                    />
-                </a>
+                {helpText}
+                <div className='help__text'>
+                    {previewLink}
+                    <a
+                        target='_blank'
+                        href='http://docs.mattermost.com/help/getting-started/messaging-basics.html'
+                        className='textbox-help-link'
+                    >
+                        <FormattedMessage
+                            id='textbox.help'
+                            defaultMessage='Help'
+                        />
+                    </a>
+                </div>
             </div>
         );
     }

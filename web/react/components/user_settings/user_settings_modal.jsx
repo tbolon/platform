@@ -111,12 +111,13 @@ class UserSettingsModal extends React.Component {
             this.afterConfirm = () => this.handleHide();
             this.showConfirmModal();
 
-            return false;
+            return;
         }
 
         this.resetTheme();
         this.deactivateTab();
         this.props.onModalDismissed();
+        return;
     }
 
     // called after the dialog is fully hidden and faded out
@@ -295,7 +296,12 @@ class UserSettingsModal extends React.Component {
                                 closeModal={this.closeModal}
                                 collapseModal={this.collapseModal}
                                 setEnforceFocus={(enforceFocus) => this.setState({enforceFocus})}
-                                setRequireConfirm={(requireConfirm) => this.requireConfirm = requireConfirm}
+                                setRequireConfirm={
+                                    (requireConfirm) => {
+                                        this.requireConfirm = requireConfirm;
+                                        return;
+                                    }
+                                }
                             />
                         </div>
                     </div>
@@ -303,7 +309,7 @@ class UserSettingsModal extends React.Component {
                 <ConfirmModal
                     title={formatMessage(holders.confirmTitle)}
                     message={formatMessage(holders.confirmMsg)}
-                    confirm_button={formatMessage(holders.confirmBtns)}
+                    confirmButton={formatMessage(holders.confirmBtns)}
                     show={this.state.showConfirmModal}
                     onConfirm={this.handleConfirm}
                     onCancel={this.handleCancelConfirmation}

@@ -69,16 +69,18 @@ func listCommands(c *Context, w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	if result := <-Srv.Store.Command().GetByTeam(c.Session.TeamId); result.Err != nil {
-		c.Err = result.Err
-		return
-	} else {
-		teamCmds := result.Data.([]*model.Command)
-		for _, cmd := range teamCmds {
-			if cmd.AutoComplete && !seen[cmd.Id] {
-				cmd.Sanitize()
-				seen[cmd.Trigger] = true
-				commands = append(commands, cmd)
+	if *utils.Cfg.ServiceSettings.EnableCommands {
+		if result := <-Srv.Store.Command().GetByTeam(c.Session.TeamId); result.Err != nil {
+			c.Err = result.Err
+			return
+		} else {
+			teamCmds := result.Data.([]*model.Command)
+			for _, cmd := range teamCmds {
+				if cmd.AutoComplete && !seen[cmd.Id] {
+					cmd.Sanitize()
+					seen[cmd.Trigger] = true
+					commands = append(commands, cmd)
+				}
 			}
 		}
 	}
@@ -111,9 +113,16 @@ func executeCommand(c *Context, w http.ResponseWriter, r *http.Request) {
 
 	if provider != nil {
 		response := provider.DoCommand(c, channelId, message)
-		handleResponse(c, w, response, channelId, provider.GetCommand(c))
+		handleResponse(c, w, response, channelId, provider.GetCommand(c), true)
 		return
 	} else {
+
+		if !*utils.Cfg.ServiceSettings.EnableCommands {
+			c.Err = model.NewLocAppError("executeCommand", "api.command.disabled.app_error", nil, "")
+			c.Err.StatusCode = http.StatusNotImplemented
+			return
+		}
+
 		chanChan := Srv.Store.Channel().Get(channelId)
 		teamChan := Srv.Store.Team().Get(c.Session.TeamId)
 		userChan := Srv.Store.User().Get(c.Session.UserId)
@@ -193,7 +202,7 @@ func executeCommand(c *Context, w http.ResponseWriter, r *http.Request) {
 							if response == nil {
 								c.Err = model.NewLocAppError("command", "api.command.execute_command.failed_empty.app_error", map[string]interface{}{"Trigger": trigger}, "")
 							} else {
-								handleResponse(c, w, response, channelId, cmd)
+								handleResponse(c, w, response, channelId, cmd, false)
 							}
 						} else {
 							body, _ := ioutil.ReadAll(resp.Body)
@@ -211,11 +220,14 @@ func executeCommand(c *Context, w http.ResponseWriter, r *http.Request) {
 	c.Err = model.NewLocAppError("command", "api.command.execute_command.not_found.app_error", map[string]interface{}{"Trigger": trigger}, "")
 }
 
-func handleResponse(c *Context, w http.ResponseWriter, response *model.CommandResponse, channelId string, cmd *model.Command) {
+func handleResponse(c *Context, w http.ResponseWriter, response *model.CommandResponse, channelId string, cmd *model.Command, builtIn bool) {
 
 	post := &model.Post{}
 	post.ChannelId = channelId
-	post.AddProp("from_webhook", "true")
+
+	if !builtIn {
+		post.AddProp("from_webhook", "true")
+	}
 
 	if utils.Cfg.ServiceSettings.EnablePostUsernameOverride {
 		if len(cmd.Username) != 0 {
